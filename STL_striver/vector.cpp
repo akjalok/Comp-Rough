@@ -48,8 +48,8 @@ void explainVector(){
         cout<<*(it)<<" ";
     }
 
-    vt1={1,2};
-    vt2={3,5}
+     vector<int>vt1={1,2};
+    vector<int>vt2={3,5};
     vt1.swap(vt2);
     //vt1-->{3,5},vt2-->{1,2}
     vt1.clear();//erases the entire vector
