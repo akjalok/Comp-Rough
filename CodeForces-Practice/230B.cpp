@@ -8,9 +8,12 @@ cin>>n;
 for(long long int i=2;i<n;i++){
     if(n%i==0){
         t++;
+        if(t>1){
+            break;
+        }
     }
 }
-if(t==2){
+if(t==1){
     cout<<"YES"<<'\n';
 }
 else
