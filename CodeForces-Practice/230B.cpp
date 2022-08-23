@@ -2,20 +2,23 @@
 
 using namespace std;
 void solve(){
-long long int n;
-int t=0;
+int n;
 cin>>n;
-for(long long int i=2;i<n;i++){
-    if(n%i==0){
-        t++;
-        if(t>1){
-            break;
+vector <int> p;
+vector<bool> isprime(1000000000001,true);
+for(int i=2;i*i<=1000000000001;i++){
+    if(isprime[i]){
+        for(int j=i*2;j<=1000000000001;j+=j+i){
+            isprime[j]=false;
         }
     }
 }
-if(t==1){
-    cout<<"YES"<<'\n';
+for(int i=2;i<1000000000001;i++){
+    if(isprime[i])
+    p.push_back(i);
 }
+if(find(p.begin(),p.end(),pow(n,.5))!=p.end())
+    cout<<"YES"<<'\n';
 else
     cout<<"NO"<<'\n';
 }
